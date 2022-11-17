@@ -45,4 +45,9 @@ public class Workspace {
     @JoinTable(joinColumns = @JoinColumn(name = "workspace_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Set<AuthUser> members = new HashSet<>();
+
+
+    @Builder.Default
+    @Column(columnDefinition = "bool default false")
+    private Boolean isDeleted = false;
 }
